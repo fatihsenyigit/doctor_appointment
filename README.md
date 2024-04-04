@@ -1,9 +1,8 @@
-# Appointment App
+# Doctor Appointment App
 
-# Kullanılan Paketler
+# Packages used
 - bootstrap and react-boostrap => https://react-bootstrap.netlify.app/
 - react-icons => https://react-icons.github.io/react-icons/ 
-react-icons ücretsiz olan iconları bir araya toplayarak oluşturulmuş bir icon kütüphanesidir. Component düzeyinde iconların kullanımını sağlar. Kurulumu ve kullanımı oldukça basittir.
 
 
 # Lifting State Up

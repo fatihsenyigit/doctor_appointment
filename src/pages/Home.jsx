@@ -1,14 +1,17 @@
 import AppointmentList from "../components/AppointmentList"
 import Doctors from "../components/Doctors"
+import { Container } from "react-bootstrap"
 
 const Home = () => {
   return (
-    <main className="text-center mt-2">
-      <h1 className="display-5 text-danger">CLARUS HOSPITAL</h1>
-      <Doctors />
-      <AppointmentList />
-    </main>
-  )
+    <div>
+      <h1 className="home-title mt-4">Merkez Efendi HOSPITAL</h1>
+      <Container>
+        <Doctors />
+        <AppointmentList />
+      </Container>
+    </div>
+  );
 }
 
 export default Home
