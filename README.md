@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Appointment App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Kullanılan Paketler
+- bootstrap and react-boostrap => https://react-bootstrap.netlify.app/
+- react-icons => https://react-icons.github.io/react-icons/ 
+react-icons ücretsiz olan iconları bir araya toplayarak oluşturulmuş bir icon kütüphanesidir. Component düzeyinde iconların kullanımını sağlar. Kurulumu ve kullanımı oldukça basittir.
 
-## Available Scripts
 
-In the project directory, you can run:
+# Lifting State Up
 
-### `npm start`
+React geliştiricilerinin bilmesi gereken yaygın bir kalıptır. Durumunuzu yönetmek için daha karmaşık (ve çoğu zaman gereksiz) kalıplardan kaçınmanıza yardımcı olur.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### React Lifting State Up Nedir?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React Lifting State Up, birden fazla component tarafından paylaşılan state'i, en yakın ortak ancestor component'e taşıma işlemidir. Bu, component'ler arasında state'i tutarlı ve organize bir şekilde yönetmeye yardımcı olur.
 
-### `npm test`
+#### Neden Kullanılır?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Birden fazla component tarafından aynı state'in kullanılması gerektiğinde
+- State'in birden fazla component tarafından güncellenmesi gerektiğinde
+- Component'leri daha bağımsız ve tekrar kullanılabilir hale getirmek için
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+React da veri akışı her zaman tek yönlüdür. Yukarıdan aşağıya. Sibling componentler arası veri akışı yoktur. Bu nedenle eğer aynı state e birden fazla componentte ihtiyaç duyuluyorsa veya statein hem parent componentten hem de child componentten yönetilmesi gerekiyorsa bu durumda Lifitng State Up konseptine ihtiyaç duyulur.
+- Bu tarz durumlarda ilgili state ortak parente taşınarak orada tanımlanır ve oradan dağıtımı gerçekleştirilir. Setter metodunu da childlara props yoluyla ulaştırarak statein ilgili childlar tarafından güncellenmesi sağlanır. Böylelikle aslında react da veri akışının yönü değişmiş olur. Yani doğal olmayan yollardan aşağıdan yukarıya, kardeşler arası veri akışı sağlamış oluyoruz.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Kullanırken tabiki de dikkatli olmak gerekir. Stateleri yukarı taşımanın renderları artıracağını unutmamalıyız.**
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Crypto: randomUUID() method
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Yerleşik olarak bulunan(tarayıcı ortamında çalışır) bu metod random olarak unique identifier oluşturur. Local veriler oluştururken id değeri için kullanılabilir. Böylelikle 3rd party kütüphanelere ihtiyacı ortadan kaldırır uuid gibi.
+- https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID
+- 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# serve
+- https://www.npmjs.com/package/serve
+- build klasörünü görüntülemeye yarayan paket.
