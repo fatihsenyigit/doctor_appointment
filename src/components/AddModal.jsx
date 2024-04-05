@@ -13,7 +13,7 @@ function AddModal({ showModal, handleClose, drName, addAppointment }) {
     addAppointment({
       id: crypto.randomUUID(),
       patient: patientName,
-      day: new Date(),
+      day: appoDate,
       consulted: false,
       doctor: drName,
     });
