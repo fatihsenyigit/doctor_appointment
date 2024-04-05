@@ -5,11 +5,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useState } from "react";
 
-const Doctors = () => {
+const Doctors = ({appos, setAppos}) => {
   const [showModal, setshowModal] = useState(false);
   const [drName, setdrName] = useState("");
 
   const handleClose = () => setshowModal(false);
+  const addAppointment = (item) => {
+    setAppos([...appos, item])
+  }
 
   return (
     <Container>
@@ -41,6 +44,7 @@ const Doctors = () => {
         drName={drName}
         handleClose={handleClose}
         showModal={showModal}
+        addAppointment={addAppointment}
       ></AddModal>
     </Container>
   );
