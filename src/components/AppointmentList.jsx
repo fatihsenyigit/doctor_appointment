@@ -7,6 +7,10 @@ import { MdOutlineCancel } from "react-icons/md";
 
 const AppointmentList = ({appos, setAppos}) => {
   console.log(appos)
+  const remove = (id) => {
+    setAppos(appos.filter((e)=> e.id!==id))
+  }
+
   return (
     <Container className="p-2">
       <h3 className="appointment-title">Appointment List</h3>
@@ -25,7 +29,7 @@ const AppointmentList = ({appos, setAppos}) => {
               <div className="tick">
                 <TiTickOutline />
               </div>
-              <div className="cancel">
+              <div onClick={()=>remove(item.id)} className="cancel">
                 <MdOutlineCancel/>
               </div>
             </div>
