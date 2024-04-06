@@ -36,6 +36,7 @@ function AddModal({ showModal, handleClose, drName, addAppointment }) {
                 onChange={(e) => setPatientName(e.target.value)}
                 value={patientName}
                 type="text"
+                required
                 placeholder="enter your name"
               />
             </Form.Group>
@@ -45,6 +46,7 @@ function AddModal({ showModal, handleClose, drName, addAppointment }) {
               <Form.Control
                 onChange={(e) => setAppoDate(e.target.value)}
                 value={appoDate}
+                required
                 type="datetime-local"
               />
             </Form.Group>
