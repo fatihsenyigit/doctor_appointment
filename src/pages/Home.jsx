@@ -5,10 +5,10 @@ import { Container } from "react-bootstrap"
 import { appointmentData } from "../helpers/data"
 
 const Home = () => {
-  const [appointment, setAppointment] = useState(appointmentData)
+  const [appointment, setAppointment] = useState(JSON.parse(localStorage.getItem('appointments')) || [])
   return (
     <div>
-      <h1 className="home-title mt-4">Merkez Efendi HOSPITAL</h1>
+      <h1 className="home-title mt-4">Saigon HOSPITAL</h1>
       <Container>
         <Doctors appos={appointment} setAppos={setAppointment} />
         <AppointmentList appos={appointment} setAppos={setAppointment} />

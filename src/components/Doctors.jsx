@@ -4,6 +4,7 @@ import { doctorData } from "../helpers/data";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useState } from "react";
+import addLocal from "../pages/utils";
 
 const Doctors = ({appos, setAppos}) => {
   const [showModal, setshowModal] = useState(false);
@@ -12,6 +13,7 @@ const Doctors = ({appos, setAppos}) => {
   const handleClose = () => setshowModal(false);
   const addAppointment = (item) => {
     setAppos([...appos, item])
+    addLocal('appointments', [...appos, item])
   }
 
   return (
